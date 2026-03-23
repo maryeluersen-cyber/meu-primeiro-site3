@@ -1,387 +1,388 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌈 Galeria de Atividades Infantis | 50 Espaços</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Atividades Infantis - 50 Ideias Divertidas</title>
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background: linear-gradient(145deg, #f9f0c1 0%, #fadadd 100%);
-            font-family: 'Segoe UI', 'Comic Sans MS', 'Chalkboard', cursive, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
             min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 10px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem 1.5rem;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        /* título principal com jeito de criança */
-        .cabecalho {
-            text-align: center;
-            margin-bottom: 2rem;
+        h1 span {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .cabecalho h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            color: #2d4059;
-            text-shadow: 6px 6px 0 #fbd46d, 8px 8px 0 rgba(0,0,0,0.1);
-            letter-spacing: 2px;
-            word-break: break-word;
-            background: #fff8e7;
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .counter {
             display: inline-block;
-            padding: 0.4rem 2rem 0.8rem 2rem;
-            border-radius: 60px 60px 30px 30px;
-            border: 5px solid #ffb347;
-            box-shadow: 0 15px 0 #bb8f4f, 0 20px 20px rgba(0,0,0,0.2);
-            transform: rotate(-1deg);
-            transition: 0.2s;
-        }
-
-        .cabecalho h1:hover {
-            transform: rotate(0deg) scale(1.02);
-            box-shadow: 0 10px 0 #bb8f4f, 0 25px 25px rgba(0,0,0,0.2);
-        }
-
-        .subtitulo {
-            font-size: 1.5rem;
-            background: #9fd8df;
-            color: #1f3a3f;
-            padding: 0.5rem 2rem;
-            border-radius: 40px;
-            display: inline-block;
-            margin-top: 1rem;
-            border: 4px dotted #f6f7d7;
-            font-weight: 600;
-            box-shadow: 0 5px 0 #59838b;
-        }
-
-        /* contador divertido */
-        .contador {
-            background: #ffd93d;
-            padding: 0.5rem 2rem;
-            border-radius: 100px;
-            margin: 1rem 0 2rem 0;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #3d2b1f;
-            border: 4px solid #f39c12;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            box-shadow: 0 8px 0 #b97310;
-        }
-
-        .contador span {
-            background: white;
-            padding: 0.3rem 1.2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 20px;
             border-radius: 50px;
-            font-size: 2.5rem;
-            border: 3px dashed #e67e22;
+            font-weight: bold;
+            margin-top: 15px;
         }
 
-        /* grade principal — 50 itens */
-        .galeria-grade {
+        /* Grid de imagens */
+        .gallery {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);  /* 5 colunas → 10 linhas = 50 */
-            gap: 1.3rem;
-            max-width: 1400px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(3px);
-            border-radius: 70px 70px 40px 40px;
-            border: 8px solid #ffe49b;
-            box-shadow: inset 0 0 30px #fff8d0, 0 30px 30px rgba(0, 0, 0, 0.15);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
 
-        /* cada cartão de atividade */
-        .cartao-atividade {
-            background: #fef9e4;
-            border-radius: 40px 40px 25px 25px;
-            border: 5px solid #fff;
-            outline: 4px solid #b0e0e6;
-            box-shadow: 0 10px 0 #a2c8d0, 0 8px 15px rgba(0,20,10,0.2);
+        /* Card de atividade */
+        .activity-card {
+            background: white;
+            border-radius: 15px;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.15s ease;
-            aspect-ratio: 3 / 4;  /* proporção bonitinha pra crianças */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
 
-        .cartao-atividade:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 0 #7bb8c2, 0 15px 20px rgba(0,0,0,0.25);
-            outline-color: #f7d794;
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .cartao-atividade:active {
-            transform: translateY(0px);
-            box-shadow: 0 5px 0 #7bb8c2;
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            background: #f0f0f0;
+            height: 250px;
         }
 
-        /* área da imagem */
-        .imagem-container {
-            width: 100%;
-            flex: 2; /* ocupa 2/3 da altura */
-            background: #c4e6f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.8rem 0.5rem 0 0.5rem;
-            border-bottom: 6px dotted #f7b731;
-        }
-
-        .imagem-container img {
+        .activity-card img {
             width: 100%;
             height: 100%;
-            object-fit: contain;  /* mantém a imagem visível sem cortar */
-            display: block;
-            filter: drop-shadow(2px 4px 6px #402e1b);
-            transition: 0.2s;
+            object-fit: cover;
+            transition: transform 0.3s ease;
         }
 
-        .cartao-atividade:hover .imagem-container img {
+        .activity-card:hover img {
             transform: scale(1.05);
-            filter: drop-shadow(4px 6px 8px #2c1e10);
         }
 
-        /* legenda da atividade */
-        .legenda {
-            flex: 1;
-            background: #ffedb9;
-            padding: 0.5rem 0.2rem;
-            text-align: center;
+        .activity-info {
+            padding: 15px;
+            background: white;
+        }
+
+        .activity-title {
             font-weight: bold;
             font-size: 1.1rem;
-            color: #1f4e5f;
-            border-top: 5px solid #f3b33d;
-            border-radius: 0 0 20px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            word-break: break-word;
-            line-height: 1.3;
-            text-shadow: 2px 2px 0 #ffeeaa;
+            color: #333;
+            margin-bottom: 8px;
         }
 
-        /* placeholder para imagens que não carregam */
-        .imagem-container img::after {
-            content: "📷";
-            display: block;
-            color: gray;
+        .activity-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
         }
 
-        /* mensagem final */
-        .rodape {
-            margin-top: 3rem;
-            font-size: 1.8rem;
-            background: #c7e9c0;
-            padding: 1rem 3rem;
-            border-radius: 60px;
-            border: 6px solid #5f9d80;
-            font-weight: 600;
-            color: #1d4d3b;
-            box-shadow: 0 10px 0 #2e6b4c;
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        .footer {
             text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        /* responsividade: se a tela for pequena, muda número de colunas */
-        @media (max-width: 900px) {
-            .galeria-grade {
-                grid-template-columns: repeat(4, 1fr); /* 4 colunas precisa de 13 linhas? Não, melhor manter 5 se possível, mas adaptar */
-            }
+        .footer p {
+            color: #666;
         }
 
-        @media (max-width: 700px) {
-            .galeria-grade {
-                grid-template-columns: repeat(3, 1fr); /* 3 colunas (17 linhas) */
+        /* Modal para imagem ampliada */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            cursor: pointer;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close-modal:hover {
+            color: #bbb;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
             }
-            .cabecalho h1 {
-                font-size: 2.4rem;
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            
+            .image-container {
+                height: 200px;
             }
         }
 
         @media (max-width: 480px) {
-            .galeria-grade {
-                grid-template-columns: repeat(2, 1fr); /* 2 colunas = 25 linhas */
-                gap: 1rem;
+            .gallery {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* bônus: estrelinhas animadas no fundo (puramente decorativo) */
-        body::before {
-            content: "⚽🎨📚🧸🎈🧩🎭🎨🖍️🚀";
-            position: fixed;
-            bottom: 10px;
-            left: 0;
-            width: 100%;
-            font-size: 3rem;
-            opacity: 0.1;
-            pointer-events: none;
-            white-space: nowrap;
-            z-index: -1;
-            animation: flutuar 30s linear infinite;
+        /* Loading effect */
+        .loading {
+            position: relative;
         }
 
-        @keyframes flutuar {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+        .loading::before {
+            content: "📸";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
     </style>
 </head>
 <body>
-    <div class="cabecalho">
-        <h1>📸 GALERIA KIDS</h1>
-        <div class="subtitulo">50 ideias para brincar e aprender</div>
+    <div class="container">
+        <div class="header">
+            <h1>
+                🎨 <span>50 Atividades Infantis</span> 🎪
+            </h1>
+            <p class="subtitle">Ideias criativas e divertidas para crianças de todas as idades!</p>
+            <div class="counter">✨ 50 atividades incríveis ✨</div>
+        </div>
+
+        <div class="gallery" id="gallery">
+            <!-- As 50 imagens serão inseridas aqui via JavaScript -->
+        </div>
+
+        <div class="footer">
+            <p>🌟 50 atividades educativas e divertidas para estimular a criatividade infantil 🌟</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Clique em qualquer imagem para ampliar</p>
+        </div>
     </div>
 
-    <div class="contador">
-        🧸 ESPAÇOS <span id="contador-itens">50</span> 🎈
-    </div>
-
-    <!-- GRADE EXATAMENTE COM 50 ITENS (usando imagens de placeholder infantis) -->
-    <div class="galeria-grade" id="galeria">
-        <!-- Os 50 cartões serão inseridos via JavaScript para manter o HTML limpo,
-             mas também poderiam ser escritos manualmente. 
-             Como a solicitação pede "crie um html com css no mesmo arquivo de uma galeria 
-             para guardar atividades infantis com a tag <img src='link'> e 50 espaços em grade",
-             optei por gerar com JS para garantir exatamente 50 e facilitar edição dos links.
-             PORÉM, os links e tags <img> são válidos e aparecem no DOM.  
-             Se preferir tudo estático, os links estariam repetitivos. Mas assim fica mais 
-             divertido e editável. -->
-    </div>
-
-    <div class="rodape">
-        ✨ 50 atividades para soltar a imaginação! ✨
+    <!-- Modal para visualização ampliada -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
     </div>
 
     <script>
-        (function() {
-            const galeria = document.getElementById('galeria');
-            // lista de links de imagens (alegres, infantis, de domínio público / ilustrações)
-            // Como são muitos links, vamos usar placeholders confiáveis que sempre exibem imagens relacionadas a crianças.
-            // Todos os links retornam imagens (ilustrações ou fotos) adequadas.
-            const linksImagens = [
-                "https://cdn-icons-png.flaticon.com/512/1995/1995572.png",  // criança pintando
-                "https://cdn-icons-png.flaticon.com/512/1995/1995580.png",  // criança lendo
-                "https://cdn-icons-png.flaticon.com/512/1995/1995619.png",  // brincando com blocos
-                "https://cdn-icons-png.flaticon.com/512/1995/1995598.png",  // criança no escorregador
-                "https://cdn-icons-png.flaticon.com/512/1995/1995608.png",  // criança com bola
-                "https://cdn-icons-png.flaticon.com/512/1995/1995634.png",  // criança dançando
-                "https://cdn-icons-png.flaticon.com/512/1995/1995641.png",  // criança e cachorro
-                "https://cdn-icons-png.flaticon.com/512/1995/1995655.png",  // criança com lápis
-                "https://cdn-icons-png.flaticon.com/512/1995/1995662.png",  // criança brincando de carrinho
-                "https://cdn-icons-png.flaticon.com/512/1995/1995678.png",  // criança com balde na praia
-                "https://cdn-icons-png.flaticon.com/512/1995/1995692.png",  // criança pintando cavalete
-                "https://cdn-icons-png.flaticon.com/512/1995/1995702.png",  // criança no balanço
-                "https://cdn-icons-png.flaticon.com/512/1995/1995721.png",  // criança com massinha
-                "https://cdn-icons-png.flaticon.com/512/1995/1995730.png",  // criança com fantoche
-                "https://cdn-icons-png.flaticon.com/512/1995/1995748.png",  // criança com tambor
-                "https://cdn-icons-png.flaticon.com/512/1995/1995764.png",  // criança correndo
-                "https://cdn-icons-png.flaticon.com/512/1995/1995775.png",  // criança jogando peteca
-                "https://cdn-icons-png.flaticon.com/512/1995/1995783.png",  // criança com bolha de sabão
-                "https://cdn-icons-png.flaticon.com/512/1995/1995790.png",  // criança no parque
-                "https://cdn-icons-png.flaticon.com/512/1995/1995809.png",  // criança com ábaco
-                "https://cdn-icons-png.flaticon.com/512/1995/1995823.png",  // criança com quebra-cabeça
-                "https://cdn-icons-png.flaticon.com/512/1995/1995832.png",  // criança brincando de casinha
-                "https://cdn-icons-png.flaticon.com/512/1995/1995854.png",  // criança com telescópio
-                "https://cdn-icons-png.flaticon.com/512/1995/1995861.png",  // criança regando planta
-                "https://cdn-icons-png.flaticon.com/512/1995/1995880.png",  // criança com bichinhos
-                "https://cdn-icons-png.flaticon.com/512/1995/1995895.png",  // criança com fantasia de super-herói
-                "https://cdn-icons-png.flaticon.com/512/1995/1995910.png",  // criança na bicicleta
-                "https://cdn-icons-png.flaticon.com/512/1995/1995928.png",  // criança com microscópio
-                "https://cdn-icons-png.flaticon.com/512/1995/1995936.png",  // criança com instrumentos
-                "https://cdn-icons-png.flaticon.com/512/1995/1995944.png",  // criança no escorregador
-                "https://cdn-icons-png.flaticon.com/512/1995/1995958.png",  // criança brincando de esconde-esconde
-                "https://cdn-icons-png.flaticon.com/512/1995/1995970.png",  // criança fazendo ginástica
-                "https://cdn-icons-png.flaticon.com/512/1995/1995983.png",  // criança no jardim
-                "https://cdn-icons-png.flaticon.com/512/1995/1995997.png",  // criança com balão
-                "https://cdn-icons-png.flaticon.com/512/1995/1996009.png",  // criança fazendo arte
-                "https://cdn-icons-png.flaticon.com/512/1995/1996022.png",  // criança jogando bola
-                "https://cdn-icons-png.flaticon.com/512/1995/1996035.png",  // criança com tablet educativo
-                "https://cdn-icons-png.flaticon.com/512/1995/1996049.png",  // criança com brinquedo de madeira
-                "https://cdn-icons-png.flaticon.com/512/1995/1996060.png",  // criança abraçando ursinho
-                "https://cdn-icons-png.flaticon.com/512/1995/1996072.png",  // criança desenhando no chão
-                "https://cdn-icons-png.flaticon.com/512/1995/1996085.png",  // criança no escorregador de piscina
-                "https://cdn-icons-png.flaticon.com/512/1995/1996094.png",  // criança fazendo cesta
-                "https://cdn-icons-png.flaticon.com/512/1995/1996107.png",  // criança brincando de trenzinho
-                "https://cdn-icons-png.flaticon.com/512/1995/1996120.png",  // criança com bola de futebol
-                "https://cdn-icons-png.flaticon.com/512/1995/1996134.png",  // criança brincando de roda
-                "https://cdn-icons-png.flaticon.com/512/1995/1996147.png",  // criança fazendo bolinho de areia
-                "https://cdn-icons-png.flaticon.com/512/1995/1996161.png",  // criança com peteca
-                "https://cdn-icons-png.flaticon.com/512/1995/1996172.png",  // criança no escorrega de ar
-                "https://cdn-icons-png.flaticon.com/512/1995/1996185.png",  // criança com corda de pular
-                "https://cdn-icons-png.flaticon.com/512/1995/1996196.png"   // criança com chocalho
-            ];
+        // Lista de 50 atividades infantis com imagens e descrições
+        const atividades = [
+            { titulo: "Pintura com as mãos", descricao: "Atividade sensorial usando tintas atóxicas", imagem: "https://picsum.photos/id/10/400/300" },
+            { titulo: "Construção com blocos", descricao: "Desenvolve coordenação e criatividade", imagem: "https://picsum.photos/id/20/400/300" },
+            { titulo: "Desenho livre", descricao: "Expressão artística espontânea", imagem: "https://picsum.photos/id/30/400/300" },
+            { titulo: "Jogo de memória", descricao: "Estimula a concentração", imagem: "https://picsum.photos/id/40/400/300" },
+            { titulo: "Dança das cadeiras", descricao: "Atividade musical divertida", imagem: "https://picsum.photos/id/50/400/300" },
+            { titulo: "Massinha de modelar", descricao: "Desenvolve habilidades motoras", imagem: "https://picsum.photos/id/60/400/300" },
+            { titulo: "Leitura de histórias", descricao: "Estimula imaginação e vocabulário", imagem: "https://picsum.photos/id/70/400/300" },
+            { titulo: "Quebra-cabeça", descricao: "Raciocínio lógico e paciência", imagem: "https://picsum.photos/id/80/400/300" },
+            { titulo: "Plantar uma sementinha", descricao: "Contato com a natureza", imagem: "https://picsum.photos/id/90/400/300" },
+            { titulo: "Teatro de fantoches", descricao: "Desenvolve expressão oral", imagem: "https://picsum.photos/id/100/400/300" },
+            { titulo: "Pular corda", descricao: "Atividade física divertida", imagem: "https://picsum.photos/id/110/400/300" },
+            { titulo: "Caça ao tesouro", descricao: "Aventura e trabalho em equipe", imagem: "https://picsum.photos/id/120/400/300" },
+            { titulo: "Origami", descricao: "Arte japonesa com papel", imagem: "https://picsum.photos/id/130/400/300" },
+            { titulo: "Pintura em tela", descricao: "Explorando cores e texturas", imagem: "https://picsum.photos/id/140/400/300" },
+            { titulo: "Amarelinha", descricao: "Brincadeira tradicional", imagem: "https://picsum.photos/id/150/400/300" },
+            { titulo: "Experiências científicas", descricao: "Aprendendo na prática", imagem: "https://picsum.photos/id/160/400/300" },
+            { titulo: "Música e instrumentos", descricao: "Desenvolvimento auditivo", imagem: "https://picsum.photos/id/170/400/300" },
+            { titulo: "Piquenique no parque", descricao: "Socialização ao ar livre", imagem: "https://picsum.photos/id/180/400/300" },
+            { titulo: "Pintura com giz", descricao: "Criatividade no chão", imagem: "https://picsum.photos/id/190/400/300" },
+            { titulo: "Boliche caseiro", descricao: "Coordenação motora", imagem: "https://picsum.photos/id/200/400/300" },
+            { titulo: "Colagem criativa", descricao: "Reciclagem e arte", imagem: "https://picsum.photos/id/210/400/300" },
+            { titulo: "Ioga para crianças", descricao: "Equilíbrio e relaxamento", imagem: "https://picsum.photos/id/220/400/300" },
+            { titulo: "Contar histórias", descricao: "Desenvolve criatividade", imagem: "https://picsum.photos/id/230/400/300" },
+            { titulo: "Pescaria magnética", descricao: "Coordenação e diversão", imagem: "https://picsum.photos/id/240/400/300" },
+            { titulo: "Corrida de saco", descricao: "Atividade física em grupo", imagem: "https://picsum.photos/id/250/400/300" },
+            { titulo: "Desenho com areia", descricao: "Sensorial e relaxante", imagem: "https://picsum.photos/id/260/400/300" },
+            { titulo: "Ciranda cirandinha", descricao: "Música e movimento", imagem: "https://picsum.photos/id/270/400/300" },
+            { titulo: "Culinária divertida", descricao: "Aprender fazendo", imagem: "https://picsum.photos/id/280/400/300" },
+            { titulo: "Bolhas de sabão", descricao: "Encantamento e diversão", imagem: "https://picsum.photos/id/290/400/300" },
+            { titulo: "Pintura com esponja", descricao: "Técnica artística diferente", imagem: "https://picsum.photos/id/300/400/300" },
+            { titulo: "Jogo da velha", descricao: "Raciocínio estratégico", imagem: "https://picsum.photos/id/310/400/300" },
+            { titulo: "Caixa sensorial", descricao: "Exploração tátil", imagem: "https://picsum.photos/id/320/400/300" },
+            { titulo: "Karaokê infantil", descricao: "Música e diversão", imagem: "https://picsum.photos/id/330/400/300" },
+            { titulo: "Construção com papelão", descricao: "Arquitetura criativa", imagem: "https://picsum.photos/id/340/400/300" },
+            { titulo: "Pintura com a natureza", descricao: "Arte com elementos naturais", imagem: "https://picsum.photos/id/350/400/300" },
+            { titulo: "Mímica", descricao: "Expressão corporal", imagem: "https://picsum.photos/id/360/400/300" },
+            { titulo: "Bambolê", descricao: "Equilíbrio e diversão", imagem: "https://picsum.photos/id/370/400/300" },
+            { titulo: "Desenho coletivo", descricao: "Trabalho em equipe", imagem: "https://picsum.photos/id/380/400/300" },
+            { titulo: "Fantasia e faz de conta", descricao: "Estimula imaginação", imagem: "https://picsum.photos/id/390/400/300" },
+            { titulo: "Escultura com argila", descricao: "Expressão artística 3D", imagem: "https://picsum.photos/id/400/400/300" },
+            { titulo: "Observação de insetos", descricao: "Ciência na natureza", imagem: "https://picsum.photos/id/410/400/300" },
+            { titulo: "Pintura com carimbo", descricao: "Explorando texturas", imagem: "https://picsum.photos/id/420/400/300" },
+            { titulo: "Avião de papel", descricao: "Origami e competição", imagem: "https://picsum.photos/id/430/400/300" },
+            { titulo: "Massagem com bolinhas", descricao: "Relaxamento sensorial", imagem: "https://picsum.photos/id/440/400/300" },
+            { titulo: "Stop (Adedonha)", descricao: "Conhecimento e rapidez", imagem: "https://picsum.photos/id/450/400/300" },
+            { titulo: "Pintura com gelo", descricao: "Experiência sensorial", imagem: "https://picsum.photos/id/460/400/300" },
+            { titulo: "Jogo das cadeiras", descricao: "Agilidade e música", imagem: "https://picsum.photos/id/470/400/300" },
+            { titulo: "Teatro de sombras", descricao: "Arte com luz e sombra", imagem: "https://picsum.photos/id/480/400/300" },
+            { titulo: "Cama elástica", descricao: "Exercício e alegria", imagem: "https://picsum.photos/id/490/400/300" },
+            { titulo: "Festa do pijama", descricao: "Socialização e diversão", imagem: "https://picsum.photos/id/500/400/300" }
+        ];
 
-            // nomes de atividades correspondentes (cada um curto e divertido)
-            const titulos = [
-                "Pintura livre", "Hora da leitura", "Blocos mágicos", "Escorregador", "Jogar bola",
-                "Dança criativa", "Amigo pet", "Rabiscos", "Carrinhos", "Praia e balde",
-                "Arte no cavalete", "Balanço", "Massinha", "Teatro fantoche", "Música: tambor",
-                "Corrida divertida", "Peteca", "Bolhas de sabão", "Parque aventura", "Ábaco",
-                "Quebra-cabeça", "Casinha", "Astrônomo mirim", "Plantinha", "Bichinhos",
-                "Herói e heroína", "Bicicleta", "Ciência divertida", "Banda infantil", "Escorregador colorido",
-                "Esconde-esconde", "Alongamento", "Jardim secreto", "Balões", "Ateliê de arte",
-                "Futebol", "App educativo", "Brinquedo antigo", "Ursinho", "Giz de chão",
-                "Piscina de bolinhas", "Basquete", "Trem da fantasia", "Futebol", "Roda cantiga",
-                "Castelo de areia", "Jogo de peteca", "Tobogã", "Pular corda", "Bebê chocalho"
-            ];
+        const gallery = document.getElementById('gallery');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeModal = document.querySelector('.close-modal');
 
-            // garantir que temos 50 (caso um ou outro fique faltando, completamos)
-            while (linksImagens.length < 50) {
-                linksImagens.push("https://cdn-icons-png.flaticon.com/512/1995/1995572.png"); // fallback
+        // Gerar os cards das atividades
+        function gerarGaleria() {
+            atividades.forEach((atividade, index) => {
+                const card = document.createElement('div');
+                card.className = 'activity-card';
+                card.setAttribute('data-index', index);
+                
+                card.innerHTML = `
+                    <div class="image-container">
+                        <img src="${atividade.imagem}" alt="${atividade.titulo}" loading="lazy">
+                    </div>
+                    <div class="activity-info">
+                        <div class="activity-title">${(index + 1)}. ${atividade.titulo}</div>
+                        <div class="activity-description">${atividade.descricao}</div>
+                        <span class="badge">⭐ Atividade ${index + 1}/50</span>
+                    </div>
+                `;
+                
+                // Adicionar evento de clique para abrir modal
+                card.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                    modalImg.src = atividade.imagem;
+                    modalImg.alt = atividade.titulo;
+                });
+                
+                gallery.appendChild(card);
+            });
+        }
+
+        // Modal events
+        closeModal.onclick = function() {
+            modal.style.display = 'none';
+        }
+
+        modal.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
             }
-            while (titulos.length < 50) {
-                titulos.push("Brincadeira nova");
+        }
+
+        // Tecla ESC para fechar modal
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
             }
+        });
 
-            // loop para criar 50 cartões
-            for (let i = 0; i < 50; i++) {
-                const cartao = document.createElement('div');
-                cartao.className = 'cartao-atividade';
+        // Inicializar a galeria
+        gerarGaleria();
 
-                const imgContainer = document.createElement('div');
-                imgContainer.className = 'imagem-container';
-
-                const img = document.createElement('img');
-                // usa link da lista (cíclico se houver menos, mas já garantimos 50)
-                img.src = linksImagens[i % linksImagens.length];
-                // texto alternativo descritivo
-                img.alt = `Atividade: ${titulos[i % titulos.length]}`;
-                // carregamento lazy pra não pesar
-                img.loading = 'lazy';
-
-                const legenda = document.createElement('div');
-                legenda.className = 'legenda';
-                legenda.textContent = titulos[i % titulos.length];
-
-                imgContainer.appendChild(img);
-                cartao.appendChild(imgContainer);
-                cartao.appendChild(legenda);
-                galeria.appendChild(cartao);
-            }
-
-            // Atualiza contador (só pra confirmar que existem 50)
-            document.getElementById('contador-itens').innerText = document.querySelectorAll('.cartao-atividade').length;
-        })();
+        // Adicionar loading effect nas imagens
+        const images = document.querySelectorAll('.image-container img');
+        images.forEach(img => {
+            img.addEventListener('load', function() {
+                this.parentElement.classList.remove('loading');
+            });
+            img.addEventListener('error', function() {
+                this.src = 'https://picsum.photos/id/404/400/300';
+                this.alt = 'Imagem não disponível';
+            });
+        });
     </script>
-
-    <!-- alternativa: fallback caso o JavaScript falhe (mas vai funcionar) -->
-    <noscript>
-        <div style="background:pink; padding:2rem; text-align:center;">
-            🚀 Ative o JavaScript para ver os 50 espaços com imagens dinâmicas.
-        </div>
-    </noscript>
 </body>
 </html>
